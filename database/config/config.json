@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "fgnjksoe",
+    "password": "J_hvTjodR6nd7dJORmu3PG3zjobjhEZj",
+    "database": "fgnjksoe",
+    "host": "tuffi.db.elephantsql.com",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "fgnjksoe",
+    "password": "J_hvTjodR6nd7dJORmu3PG3zjobjhEZj",
+    "database": "fgnjksoe",
+    "host": "tuffi.db.elephantsql.com",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "fgnjksoe",
+    "password": "J_hvTjodR6nd7dJORmu3PG3zjobjhEZj",
+    "database": "fgnjksoe",
+    "host": "tuffi.db.elephantsql.com",
+    "dialect": "postgres"
+  }
+}
