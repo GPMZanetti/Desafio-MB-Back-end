@@ -1,9 +1,13 @@
-var express = require('express');
-var router = express.Router();
+var rotas = require('express').Router();
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+var roteadorCadastrarConta = require('./cadastrarConta');
+var roteadorIniciarSessão = require('./iniciarSessao');
+
+rotas.get('/', (req, res) => {
+  return res.json({version: 1.0})
 });
 
-module.exports = router;
+rotas.use('/cadastrarConta', roteadorCadastrarConta);
+rotas.use('/iniciarSessao', roteadorIniciarSessão);
+
+module.exports = rotas;

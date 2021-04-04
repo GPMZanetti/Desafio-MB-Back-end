@@ -34,4 +34,14 @@ Object.keys(db).forEach(modelName => {
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
+const Usuário = require('./usuario');
+const Evento = require('./evento');
+const Pedido = require('./pedido');
+const Ingresso = require('./ingresso');
+
+db.Usuário = Usuário(sequelize, Sequelize.DataTypes);
+db.Evento = Evento(sequelize, Sequelize.DataTypes);
+db.Pedido = Pedido(sequelize, Sequelize.DataTypes);
+db.Ingresso = Ingresso(sequelize, Sequelize.DataTypes);
+
 module.exports = db;
