@@ -25,7 +25,7 @@ roteador.post('/', async function(req, res, next) {
         if (!usuárioCriado)
           return res.json({situação: "Erro", dados: "Usuário já cadastrado"});
 
-        return res.json({situção: "Sucesso"});
+        return res.json({situação: "Sucesso"});
       }).catch((erro) => {
         console.log(erro);
         return res.json({situação: "Erro", dados: "Erro ao cadastrar usuário"});
