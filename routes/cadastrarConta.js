@@ -11,7 +11,7 @@ roteador.post('/', async function (req, res, next) {
 		await bcrypt.hash(senha, 10, (erro, hash) => {
 			senha = hash;
 
-			models['Usuário'].findOrCreate({
+			models['Usuario'].findOrCreate({
 				where: {
 					email,
 				},

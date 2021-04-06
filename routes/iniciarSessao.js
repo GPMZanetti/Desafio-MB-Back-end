@@ -9,7 +9,7 @@ roteador.post('/', async function(req, res, next) {
   let { email, senha } = req.body;
 
   try {
-    models['Usuário'].findOne({
+    models['Usuario'].findOne({
         where: {
             email,
         },
@@ -27,20 +27,18 @@ roteador.post('/', async function(req, res, next) {
                 expiresIn: 14400
             });
 
-            res.json({"situação": "Sucesso", "dados": token});
+            return res.json({"situação": "Sucesso", "dados": token});
         }
         else
             res.json({"situação": "Erro", "dados": "Endereço de e-mail ou senha inválidos"});
-        
-        return res.json({situção: "Sucesso"});
     }).catch((erro) => {
         console.log(erro);
-        return res.json({situação: "Erro", dados: "Erro ao cadastrar usuário"});
+        return res.json({situação: "Erro", dados: "Erro ao iniciar sessão"});
     });
   }
   catch (erro) {
       console.log(erro);
-      return res.json({situação: "Erro", dados: "Erro ao cadastrar usuário"});
+      return res.json({situação: "Erro", dados: "Erro ao iniciar sessão"});
   }
 });
 
