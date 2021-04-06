@@ -1,7 +1,7 @@
 var roteador = require('express').Router();
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const { Usuário } = require('../database/models');
+const models = require('../database/models');
 
 process.env.SECRET_KEY = 's5i9NlQC9G';
 
@@ -9,7 +9,7 @@ roteador.post('/', async function(req, res, next) {
   let { email, senha } = req.body;
 
   try {
-    Usuário.findOne({
+    models['Usuário'].findOne({
         where: {
             email,
         },
